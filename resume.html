@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Anbuchelvan VK – Resume</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR (same as index) -->
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                AC
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#stack">Stack</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#now">Current</a></li>
+                <li><a href="index.html#activity">Activity</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="index.html" class="nav-resume">Home</a>
+                <a href="resume.pdf" download><button class="nav-btn">
+                        <span class="btn-text">Download</span>
+
+                        <span class="btn-icon">
+                            <!-- Download SVG -->
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 3V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M5 21H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </span>
+                    </button>
+                </a>
+
+
+            </div>
+        </nav>
+    </div>
+
+    <!-- RESUME SECTION -->
+    <div class="resume-wrapper">
+        <section class="section resume-page">
+            <h2 class="section-title">My Resume
+                <div class="title-accent"></div>
+            </h2>
+
+            <div class="resume-viewer">
+                <embed src="resume.pdf#toolbar=0&navpanes=0&scrollbar=0" type="application/pdf" />
+
+            </div>
+
+            <div class="resume-actions">
+                <a href="resume.pdf" download class="btn btn-primary">
+                    Download Resume
+                </a>
+            </div>
+        </section>
+    </div>
+    <a href="index.html" class="resume-float" aria-label="View Resume">
+        🏠 Home
+    </a>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

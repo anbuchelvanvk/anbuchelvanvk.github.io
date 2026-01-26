@@ -298,3 +298,63 @@ document.querySelectorAll('.contact-link').forEach(link => {
         link.style.transform = 'translateY(0) scale(1)';
     });
 });
+const STACK_DATA = {
+  languages: [
+    { name: "HTML", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+    { name: "CSS", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+    { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "Python", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+    { name: "Java", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+    { name: "Dart", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" }
+  ],
+
+  frameworks: [
+    { name: "Flutter", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
+    { name: "React", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "Angular", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+    { name: "Node.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "Express", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    { name: "Flask", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" }
+  ],
+
+  databases: [
+    { name: "MongoDB", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    { name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    { name: "PostgreSQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" }
+  ],
+
+  tools: [
+    { name: "Premiere Pro", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg" },
+    { name: "Photoshop", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg" },
+    { name: "After Effects", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg" }
+  ]
+};
+
+const stackGrid = document.getElementById("stackGrid");
+const stackTabs = document.querySelectorAll(".stack-tab");
+
+function renderStack(category) {
+  stackGrid.innerHTML = "";
+
+  STACK_DATA[category].forEach(item => {
+    const div = document.createElement("div");
+    div.className = "stack-item tilt";
+    div.innerHTML = `
+      <img src="${item.img}" alt="${item.name}">
+      <span>${item.name}</span>
+    `;
+    stackGrid.appendChild(div);
+  });
+}
+
+// Default load
+renderStack("languages");
+
+stackTabs.forEach(tab => {
+  tab.addEventListener("click", () => {
+    stackTabs.forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    renderStack(tab.dataset.category);
+  });
+});
+

@@ -3279,3 +3279,46 @@
     padding: 12px 16px;
   }
 }
+/* =========================
+   STACK CATEGORY TABS
+========================= */
+
+.stack-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px 0 40px;
+  flex-wrap: wrap;
+}
+
+.stack-tab {
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(25,195,125,.35);
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .25s ease;
+}
+
+.stack-tab:hover {
+  color: var(--green);
+  box-shadow: 0 0 16px rgba(25,195,125,.35);
+}
+
+.stack-tab.active {
+  background: var(--green);
+  color: #02140c;
+  box-shadow: 0 0 22px rgba(25,195,125,.65);
+}
+
+/* Mobile polish */
+@media (max-width: 600px) {
+  .stack-tabs {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+}
+
